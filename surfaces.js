@@ -1,15 +1,15 @@
-exports.square =  (s) => {
+exports.cuadrado =  (s) => {
     return s * s;
 };
-exports.rectangle =  (b, h) => {
+exports.rectangulo =  (b, h) => {
     return b * h;
 };
-exports.triangle =  (b, h) => {
+exports.triangulo =  (b, h) => {
     return b * h / 2;
 };
-exports.circle =  (r) => {
+exports.circulo =  (r) => {
     return Math.PI * r * r;
 };
-exports.ellipse =  (a, b) => {
+exports.elipse =  (a, b) => {
     return Math.PI * a * b;
 };

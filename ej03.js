@@ -3,52 +3,52 @@ const calcSurface = (figure) => {
     process.stdin.resume();
     process.stdin.setEncoding('utf8');
     switch (figure) {
-        case 'square':
-            process.stdout.write('Please enter the side of a square: ');
+        case 'cuadrado':
+            process.stdout.write('Ingresa el lado de un cuadrado: ');
             process.stdin.on('data', (chunk) => {
                 let side = parseFloat(chunk);
-                let surface = surfaces.square(side);
-                process.stdout.write('The surface of the square is ' + surface + ' square meters\n');
+                let surface = surfaces.cuadrado(side);
+                process.stdout.write('La superficie del cuadrado es ' + surface + ' metros cuadrados \n');
                 process.stdin.destroy();
             });
             break;
-        case 'triangle':
-            process.stdout.write('Please enter the base and the height of a triangle, separated by a space: ');
+        case 'triangulo':
+            process.stdout.write('Ingresa la base y la altura de un triangulo, separado por un espacio: ');
             process.stdin.on('data', (chunk) => {
                 let baseAndHeight = chunk.split(' ');
                 let base = parseFloat(baseAndHeight[0]);
                 let height = parseFloat(baseAndHeight[1]);
-                let surface = surfaces.triangle(base, height);
-                process.stdout.write('The surface of the triangle is ' + surface + ' square meters\n');
+                let surface = surfaces.triangulo(base, height);
+                process.stdout.write('La superficie del triangulo es ' + surface + ' metros cuadrados \n');
                 process.stdin.destroy();
             });
             break;
-        case 'rectangle':
-            process.stdout.write('Please enter the base and the height of a rectangle, separated by a space: ');
+        case 'rectangulo':
+            process.stdout.write('Ingresa la base y la altura de un rectangulo, separado por un espacio: ');
             process.stdin.on('data', (chunk) => {
                 let baseAndHeight = chunk.split(' ');
                 let base = parseFloat(baseAndHeight[0]);
                 let height = parseFloat(baseAndHeight[1]);
-                let surface = surfaces.rectangle(base, height);
-                process.stdout.write('The surface of the rectangle is ' + surface + ' square meters\n');
+                let surface = surfaces.rectangulo(base, height);
+                process.stdout.write('La superficie del rectangulo es ' + surface + ' metros cuadrados \n');
                 process.stdin.destroy();
             });
             break;
-        case 'circle':
-            process.stdout.write('Please enter the radius of a circle: ');
+        case 'circulo':
+            process.stdout.write('Ingresa el radio de un circulo: ');
             process.stdin.on('data', (chunk) => {
-                let surface = surfaces.circle(parseFloat(chunk));
-                process.stdout.write('The surface of the circle is ' + surface + ' square meters\n');
+                let surface = surfaces.circulo(parseFloat(chunk));
+                process.stdout.write('La superficie del circulo es ' + surface + ' metros cuadrados \n');
                 process.stdin.destroy();
             });
             break;
         default:
-            process.stdout.write('You missed the option. Please try again.\n');
+            process.stdout.write('Te equivocaste de opcion. Por favor intenta otra vez.\n');
             process.exit();
             break;
     }
 }
 calcSurface(process.argv[2]);
 process.on('exit', () => {
-    process.stdout.write('Until next time my friend!\n');
+    process.stdout.write('Hasta la próxima mi amigo!\n');
 });
